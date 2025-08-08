@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace MyFirstConsoleIBMProject
             productPrice = price;
             productQuantity = quantity;
         }
-        //properties
+        // public properties only for private data members
         public string ProductName //should start from upper case letter
         {
             get { return productName; }
@@ -89,5 +90,19 @@ namespace MyFirstConsoleIBMProject
                 Console.WriteLine("Invalid price. Price must be greater than zero.");
             }
         }
+            //method to sell the product
+        public void SellProduct(int sellquantity)
+        {
+            if (sellquantity>0  && sellquantity <= productQuantity)
+            {
+                productQuantity-=sellquantity;
+                Console.WriteLine($"{sellquantity} units sold. Remaining stock: {productQuantity}");
+            }
+            else
+            {
+                Console.WriteLine("Insufficient Stock");
+            }
+        }
+        
     }
 }
