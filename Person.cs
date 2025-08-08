@@ -41,6 +41,14 @@ namespace MyFirstConsoleIBMProject
             City = city;
             Age = age;
         }
+        public string getPersonDetails()
+        {
+            return $"Id: {Id}, Name: {Name}, City: {City}, Age: {Age}";
+        }
+        public override string ToString()
+        {
+            return $"Id: {Id}, Name: {Name}, City: {City}, Age: {Age}";
+        }
 
     }
 }

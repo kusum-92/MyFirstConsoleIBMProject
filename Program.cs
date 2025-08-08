@@ -172,77 +172,79 @@ static string CalculationDemo()
 //}
 
 
-Product product = new Product();
-Console.WriteLine("enter number of products");
-int n = Convert.ToInt32(Console.ReadLine());
-for (int i = 0; i < n; i++)
-{
-    Console.WriteLine($"\nEnter details for product {i + 1}:");
-    Console.WriteLine("Enter the product name:");
-    product.ProductName = Console.ReadLine();
-    Console.WriteLine("Enter product price");
-    product.ProductPrice = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("enter product quantity");
-    product.ProductQuantity = Convert.ToInt32(Console.ReadLine());
+//Product product = new Product();
+//Console.WriteLine("enter number of products");
+//int n = Convert.ToInt32(Console.ReadLine());
+//for (int i = 0; i < n; i++)
+//{
+//    Console.WriteLine($"\nEnter details for product {i + 1}:");
+//    Console.WriteLine("Enter the product name:");
+//    product.ProductName = Console.ReadLine();
+//    Console.WriteLine("Enter product price");
+//    product.ProductPrice = Convert.ToInt32(Console.ReadLine());
+//    Console.WriteLine("enter product quantity");
+//    product.ProductQuantity = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Choose an Option:\n" +
-        "1. Display Product details\n"
-        + "2. Calculate Total Price\n"
-        + "3. Apply Discount\n" +
-        "4. Check Stock\n" +
-        "5. Restock Product\n" + "" +
-        "6. Update the price\n" + "7. Sell Product\n");
+//    Console.WriteLine("Choose an Option:\n" +
+//        "1. Display Product details\n"
+//        + "2. Calculate Total Price\n"
+//        + "3. Apply Discount\n" +
+//        "4. Check Stock\n" +
+//        "5. Restock Product\n" + "" +
+//        "6. Update the price\n" + "7. Sell Product\n");
 
-    int ch = Convert.ToInt32(Console.ReadLine());
-    switch (ch)
-    {
-        case 1: product.DisplayProductDetails(); break;
-        case 2: Console.WriteLine($"\nTotal Price: {product.CalculateTotalPrice()}"); break;
-        case 3:
-            Console.WriteLine("\nEnter discount percentage:");
-            double discountPercentage = Convert.ToDouble(Console.ReadLine()); break;
-        case 4:
-            Console.WriteLine("\nIs the product in stock?");
-            if (product.IsInStock())
-            {
-                Console.WriteLine("Product is in stock.");
-            }
-            else
-            {
-                Console.WriteLine("Product is out of stock.");
-            }
-            break;
+//    int ch = Convert.ToInt32(Console.ReadLine());
+//    switch (ch)
+//    {
+//        case 1: product.DisplayProductDetails(); break;
+//        case 2: Console.WriteLine($"\nTotal Price: {product.CalculateTotalPrice()}"); break;
+//        case 3:
+//            Console.WriteLine("\nEnter discount percentage:");
+//            double discountPercentage = Convert.ToDouble(Console.ReadLine()); break;
+//        case 4:
+//            Console.WriteLine("\nIs the product in stock?");
+//            if (product.IsInStock())
+//            {
+//                Console.WriteLine("Product is in stock.");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Product is out of stock.");
+//            }
+//            break;
 
-        case 5: 
-            Console.WriteLine("\nEnter quantity to restock");
+//        case 5: 
+//            Console.WriteLine("\nEnter quantity to restock");
 
-            product.Restock(Convert.ToInt32(Console.ReadLine()));break;
-        case 6:
-            Console.WriteLine("\nenter updated price:");
-            product.UpdatePrice(Convert.ToInt32(Console.ReadLine())); break;
-        case 7:
-            Console.WriteLine("\nEnter the quantity to sell:");
-            product.SellProduct(Convert.ToInt32(Console.ReadLine()));break;      
-
-
-        default:
-            Console.WriteLine("Invalid Choice");
-            return;
+//            product.Restock(Convert.ToInt32(Console.ReadLine()));break;
+//        case 6:
+//            Console.WriteLine("\nenter updated price:");
+//            product.UpdatePrice(Convert.ToInt32(Console.ReadLine())); break;
+//        case 7:
+//            Console.WriteLine("\nEnter the quantity to sell:");
+//            product.SellProduct(Convert.ToInt32(Console.ReadLine()));break;      
 
 
-    }
-    Console.WriteLine("If you want to continue press \"y\" or any other key to exit");
-    if (Console.ReadLine().ToLower() == "y")
-    {
-        continue;
-    }
-    else
-    {
-        break;
+//        default:
+//            Console.WriteLine("Invalid Choice");
+//            return;
 
 
-    }
-}//Console.WriteLine("Enter the product name:");
+//    }
+//    Console.WriteLine("If you want to continue press \"y\" or any other key to exit");
+//    if (Console.ReadLine().ToLower() == "y")
+//    {
+//        continue;
+//    }
+//    else
+//    {
+//        break;
+
+
+//    }
+//}
+
+//Console.WriteLine("Enter the product name:");
 //product.ProductName = Console.ReadLine();
 //Console.WriteLine("Enter product price");
 //product.ProductPrice = Convert.ToInt32(Console.ReadLine());
@@ -275,4 +277,36 @@ for (int i = 0; i < n; i++)
 
 //Console.WriteLine("\nEnter the quantity to sell:");
 //product.SellProduct(Convert.ToInt32(Console.ReadLine()));
+
+static void PersonDetails2()
+{
+    Person person = new Person();
+    Console.WriteLine("Enter your Id:");
+    person.Id = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter your name:");
+    person.Name = Console.ReadLine();
+    Console.WriteLine("enter your city:");
+    person.City = Console.ReadLine();
+    Console.WriteLine("Enter your age:");
+    person.Age = Convert.ToInt32(Console.ReadLine());
+}
+
+//PersonDetails2();
+
+//person.DisplayPersonDetails();
+//Console.WriteLine(person.ToString);
+
+Employee employee = new Employee();
+Console.WriteLine("Enter ID of the employee");
+employee.EmployeeID = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter name of the employee");
+employee.Name = Console.ReadLine();
+employee.Age = 22;
+employee.Role= "Software Engineer";
+employee.City="Hyderabad";
+employee.Email = "xyz@email.com";
+employee.Salary = 60000;
+
+Console.WriteLine(employee.getPersonDetails());
+Console.WriteLine(employee.GetEmployeeInfo());
 
